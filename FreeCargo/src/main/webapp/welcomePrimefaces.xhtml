@@ -3,7 +3,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
 
     <f:view contentType="text/html">
         <h:head>
@@ -40,6 +41,25 @@
 
                 <p:layoutUnit position="center">
                     Welcome to PrimeFaces
+                    <p:button value="normal"/>
+                    <b:button value="Primary" look="primary" iconAwesome="fa-cloud-download"/>
+                    <p:link href="http://showcase.bootsfaces.net/forms/commandButton.jsf" value="ShowCase Boostrap" style="text-decoration: blink" />
+                    <b:panel style="width:50%; border: #ffffff">
+                        <b:dataTable value="#{mBeanCtrl.list}" var="item" id="listID" style="width:100%">
+                            <h:column>
+                                <f:facet name="header">
+                                    <p:outputLabel value="Attr1"/>
+                                </f:facet>
+                                <p:outputLabel value="#{item.attr1}"/>
+                            </h:column>   
+                            <h:column>
+                                <f:facet name="header">
+                                    <p:outputLabel value="Attr2"/>
+                                </f:facet>
+                                <p:outputLabel value="#{item.attr2}"/> 
+                            </h:column> 
+                        </b:dataTable>
+                    </b:panel>
                 </p:layoutUnit>
 
             </p:layout>
